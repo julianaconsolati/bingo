@@ -1,13 +1,12 @@
 from src.bingo import carton
 
-def test_contar_celdas_ocupadas():
+def contar_celdas_ocupadas():
     mi_carton = carton()
     contador = 0
     for fila in mi_carton:
         for celda in fila:
             contador += celda
     return contador
-    #  assert contador == 15
 
 def test_menos_de_15():
     assert test_contar_celdas_ocupadas() <= 15
