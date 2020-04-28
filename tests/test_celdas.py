@@ -30,3 +30,17 @@ def test_columnas_ocupadas():
         contador = 0
     assert True
 
+<<<<<<< HEAD
+=======
+def test_filas_ocupadas():
+    mi_carton = carton()
+    contador = 0
+    for i in range(3):
+        for j in range(9):
+            if mi_carton[i][j] == 0:
+                contador += 1
+        if contador == 9:
+            assert False
+        contador = 0
+    assert True
+>>>>>>> 3ee65e562219e76152f3cca3b4e684592c4d0564
