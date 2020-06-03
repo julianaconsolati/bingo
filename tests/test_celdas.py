@@ -16,3 +16,7 @@ def test_columnas_ocupadas():
 # testea que no haya filas vacias
 def test_filas_ocupadas():
     assert bingo.filas_ocupadas(mi_carton)
+
+# Verifica que no haya filas con 3 celdas vacias consecutivas
+def test_no_mas_de_3_celdas_vacias():
+    assert bingo.no_mas_de_3_celdas_vacias(mi_carton)
