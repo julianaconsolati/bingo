@@ -6,6 +6,39 @@ def carton():
     )
     return cartonConCeldas
 
+# cuenta cuantas celdas ocupadas hay
+def contar_celdas_ocupadas(mi_carton):
+    contador = 0
+    for fila in mi_carton:
+        for celda in fila:
+            if celda != 0:
+                contador += 1
+    return contador
+
+# retorna true si no hay columnas vacias
+def columnas_ocupadas(mi_carton):
+    contador = 0
+    for i in range(9):
+        for j in range(3):
+            if mi_carton[j][i] == 0:
+                contador += 1
+        if contador == 3:
+            return False
+        contador = 0
+    return True
+
+# retorna true si no hay filas vacias
+def filas_ocupadas(mi_carton):
+    contador = 0
+    for i in range(3):
+        for j in range(9):
+            if mi_carton[i][j] == 0:
+                contador += 1
+        if contador == 9:
+            return False
+        contador = 0
+    return True
+
 # Retorna True si no hay numeros repetido, False en caso contrario
 def sin_numeros_repeditos(mi_carton):
     for fila in mi_carton:
