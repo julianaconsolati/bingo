@@ -7,7 +7,7 @@ def carton():
     return cartonConCeldas
 
 # Retorna True si no hay numeros repetido, False en caso contrario
-def sin_numeros_repeditos(mi_carton):
+def sin_numeros_repetidos(mi_carton):
     for fila in mi_carton:
         for celda in fila:
             if celda != 0:
