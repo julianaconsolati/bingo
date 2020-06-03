@@ -57,3 +57,11 @@ def celdas_1_a_90(mi_carton):
             if(celda >= 0 and celda <= 0):
                 return True
     return False
+
+# Retorna True si las celdas ocupadas son mayores que la de su izquierda, False en caso contrario
+def fila_menor_derecha(mi_carton):
+    for i in range(9):
+        for j in range(2):
+            if mi_carton[j][i] > mi_carton[j+1][i] and mi_carton[j+1][i] != 0:
+                return False
+    return True
