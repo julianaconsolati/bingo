@@ -15,6 +15,20 @@ def contar_celdas_ocupadas(mi_carton):
                 contador += 1
     return contador
 
+# reotrna true si el carton tiene 3 y solo 3 columas con solo una celda ocupada, false en caso contrario
+def tres_columnas_con_una_celda(mi_carton):
+    aux = 0
+    for i in range(9):
+        contador = 0
+        for j in range(3):
+            if mi_carton[j][i] != 0:
+                contador += 1
+        if contador == 1:
+            aux += 1
+    if aux != 3:
+        return False
+    return True
+
 # retorna true si cada fila tiene solo 5 celdas ocupadas
 def fila_solo_cinco(mi_carton):
     for fila in mi_carton:
@@ -26,7 +40,7 @@ def fila_solo_cinco(mi_carton):
             return False
     return True
 
-# retorna true si no hay 3 o mas celdas vacias consecutivas, False en caso contrario
+# retorna true si no hay 3 o mas celdas vacias consecutivas, false en caso contrario
 def no_mas_de_3_celdas_vacias(mi_carton):
     for i in range(7):
         for j in range(3):
@@ -34,8 +48,8 @@ def no_mas_de_3_celdas_vacias(mi_carton):
                 return False
     return True
 
-# retorna true si no hay columnas vacias, False en caso contrario
-def columnas_ocupadas(mi_carton):
+# retorna true si no hay columnas vacias, false en caso contrario
+def columnas_vacias(mi_carton):
     contador = 0
     for i in range(9):
         for j in range(3):
@@ -46,8 +60,20 @@ def columnas_ocupadas(mi_carton):
         contador = 0
     return True
 
+# retorna true si no hay columnas llenas, False en caso contrario
+def columnas_llenas(mi_carton):
+    contador = 0
+    for i in range(9):
+        for j in range(3):
+            if mi_carton[j][i] != 0:
+                contador += 1
+        if contador == 3:
+            return False
+        contador = 0
+    return True
+
 # retorna true si no hay filas vacias, False en caso contrario
-def filas_ocupadas(mi_carton):
+def filas_vacias(mi_carton):
     contador = 0
     for i in range(3):
         for j in range(9):
