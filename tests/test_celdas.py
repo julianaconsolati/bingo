@@ -6,18 +6,14 @@ def contar_celdas_ocupadas():
     contador = 0
     for fila in mi_carton:
         for celda in fila:
-<<<<<<< HEAD
             if celda != 0:
-=======
-            if (celda > 0):
->>>>>>> 80f312ff320f77429dc7ee3813c7e242078a5fb8
                 contador += 1
     return contador
 
 # testea que el carton tenga 15 celdas ocupadas o menos
 def test_menos_de_15():
     assert contar_celdas_ocupadas() <= 15
-
+    
 # testea que el carton tenga 15 celdas ocupadas o mas
 def test_mas_de_15():
     assert contar_celdas_ocupadas() >= 15
@@ -34,10 +30,7 @@ def test_columnas_ocupadas():
         contador = 0
     assert True
 
-<<<<<<< HEAD
-=======
 # testea que el carton tenga al menos una celda ocupada en todas las filas
->>>>>>> 80f312ff320f77429dc7ee3813c7e242078a5fb8
 def test_filas_ocupadas():
     contador = 0
     for i in range(3):
