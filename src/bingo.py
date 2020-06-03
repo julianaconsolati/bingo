@@ -11,8 +11,11 @@ def sin_numeros_repetidos(mi_carton):
     for fila in mi_carton:
         for celda in fila:
             if celda != 0:
+                contador = 0
                 for fila2 in mi_carton:
                     for celda2 in fila2:
                         if celda == celda2:
-                            return False
+                            contador += 1
+                if contador != 1:
+                    return False
     return True
