@@ -10,6 +10,6 @@ def carton():
 def celdas_1_a_90(mi_carton):
     for fila in mi_carton:
         for celda in fila:
-            if(celda >= 0 and celda <= 0):
+            if(celda >= 0 and celda <= 90):
                 return True
     return False
