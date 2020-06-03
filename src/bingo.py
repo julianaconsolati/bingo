@@ -15,6 +15,17 @@ def contar_celdas_ocupadas(mi_carton):
                 contador += 1
     return contador
 
+# retorna true si cada fila tiene solo 5 celdas ocupadas
+def fila_solo_cinco(mi_carton):
+    for fila in mi_carton:
+        contador = 0
+        for celda in fila:
+            if celda != 0:
+                contador += 1
+        if contador != 5:
+            return False
+    return True
+
 # retorna true si no hay 3 o mas celdas vacias consecutivas, False en caso contrario
 def no_mas_de_3_celdas_vacias(mi_carton):
     for i in range(7):
