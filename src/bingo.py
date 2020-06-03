@@ -58,7 +58,6 @@ def celdas_1_a_90(mi_carton):
                 return True
     return False
 
-<<<<<<< HEAD
 # Retorna True si todos los numeros van de menor a mayor de arriba hacia abajo, False en caso contrario
 def fila_mayor_abajo(mi_carton):
     for i in range(8):
@@ -66,7 +65,6 @@ def fila_mayor_abajo(mi_carton):
             if mi_carton[j][i] > mi_carton[j][i+1] and mi_carton[j][i+1] != 0:
                 return False
     return True
-=======
 # Retorna True si las celdas ocupadas son mayores que la de su izquierda, False en caso contrario
 def fila_menor_derecha(mi_carton):
     for i in range(9):
@@ -74,4 +72,3 @@ def fila_menor_derecha(mi_carton):
             if mi_carton[j][i] > mi_carton[j+1][i] and mi_carton[j+1][i] != 0:
                 return False
     return True
->>>>>>> d411bea82fa43205adef21a0667c7d3f3c9398ab
