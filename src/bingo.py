@@ -1,3 +1,7 @@
+import random
+import math
+
+"""
 def carton():
     cartonConCeldas = (
         (3,0,22,0,41,52,0,0,89),
@@ -5,6 +9,7 @@ def carton():
         (0,18,25,0,44,0,64,76,0)
     )
     return cartonConCeldas
+"""
 
 # cuenta cuantas celdas ocupadas hay
 def contar_celdas_ocupadas(mi_carton):
@@ -118,3 +123,91 @@ def fila_menor_derecha(mi_carton):
             if mi_carton[j][i] > mi_carton[j+1][i] and mi_carton[j+1][i] != 0:
                 return False
     return True
+
+
+
+
+# Genera un carton (valido o no)
+def nuevo_carton():
+    contador = 0
+
+    carton = [
+        [0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0]
+    ]
+    numerosCarton = 0
+
+    while numerosCarton < 15:
+        contador += 1
+        if contador == 50 :
+            return nuevo_carton()
+        numero = random.randint(1, 90)
+
+        columna = math.floor(numero / 10)
+        if columna == 9:
+            columna = 8
+        huecos = 0
+        for i in range(3):
+            if carton[i][columna] == 0:
+                huecos += 1
+            if carton[i][columna] == numero:
+                huecos = 0
+                break
+        if(huecos < 2):
+            continue
+
+        fila = 0
+        for j in range(3):
+            huecos = 0
+            for i in range(9):
+                if carton[fila][i] == 0:
+                    huecos += 1
+            if huecos < 5 or carton[fila][columna] != 0:
+                fila += 1
+            else:
+                break
+        if fila == 3:
+            continue
+
+        carton[fila][columna] = numero
+        numerosCarton += 1
+        contador = 0
+
+    for x in range(9):
+        huecos = 0
+        for y in range(3):
+            if carton[y][x] == 0:
+                huecos += 1
+        if huecos == 3:
+            return nuevo_carton()
+    return carton
+
+def imprimirCarton(carton) :
+    for fila in carton:
+        for celda in fila:
+            print(celda, end='  ')
+        print()
+
+def main():
+    imprimirCarton(nuevo_carton())
+
+if __name__=="__main__":
+    main()
+    
+""" esto pa despues
+while True:
+    carton = nuevo_carton()
+    if(contar_celdas_ocupadas(carton) == 15
+    and fila_solo_cinco(carton)
+    and columnas_vacias(carton)
+    and filas_vacias(carton)
+    and columnas_llenas(carton)
+    and celdas_1_a_90(carton)
+    and fila_menor_derecha(carton)
+    and fila_mayor_abajo(carton)
+    and sin_numeros_repeditos(carton)
+    and tres_columnas_con_una_celda(carton)
+    and no_mas_de_3_celdas_vacias(carton)):
+        break
+"""
