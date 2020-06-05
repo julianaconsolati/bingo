@@ -1,10 +1,10 @@
 import random
 import math
 
-"""
+"""     ejemplo
 def carton():
     cartonConCeldas = (
-        (3,0,22,0,41,52,0,0,89),
+        (3,0,25,0,41,52,0,0,89),
         (7,12,0,38,0,57,0,73,0),
         (0,18,25,0,44,0,64,76,0)
     )
@@ -12,7 +12,7 @@ def carton():
 """
 
 # cuenta cuantas celdas ocupadas hay
-def contar_celdas_ocupadas(mi_carton):
+def contar_celdas_ocupadas(mi_carton):  
     contador = 0
     for fila in mi_carton:
         for celda in fila:
@@ -100,6 +100,7 @@ def sin_numeros_repeditos(mi_carton):
                             return False
     return True
 
+
 # Retorna True si las celdas ocupadas se encuentran entre 1 y 90, False en caso contrario
 def celdas_1_a_90(mi_carton):
     for fila in mi_carton:
@@ -108,26 +109,39 @@ def celdas_1_a_90(mi_carton):
                 return True
     return False
 
-# Retorna True si todos los numeros van de menor a mayor de arriba hacia abajo, False en caso contrario
-def fila_mayor_abajo(mi_carton):
-    for i in range(8):
-        for j in range(3):
-            if mi_carton[j][i] > mi_carton[j][i+1] and mi_carton[j][i+1] != 0:
-                return False
-    return True
-
 # Retorna True si las celdas ocupadas son mayores que la de su izquierda, False en caso contrario
+def fila_mayor_abajo(mi_carton):
+    for columna in range(9):
+        if mi_carton[0][columna] != 0:
+            if mi_carton[1][columna] != 0:
+                if mi_carton[0][columna] > mi_carton[1][columna]:
+                    return False
+            if mi_carton[2][columna] != 0:
+                if mi_carton[0][columna] > mi_carton[2][columna]:
+                    return False
+
+        if mi_carton[1][columna] != 0:
+            if mi_carton[2][columna] != 0:
+                if mi_carton[1][columna] > mi_carton[2][columna]:
+                    return False
+    return True
+
+# Retorna True si todos los numeros van de menor a mayor de arriba hacia abajo, False en caso contrario
 def fila_menor_derecha(mi_carton):
-    for i in range(9):
-        for j in range(2):
-            if mi_carton[j][i] > mi_carton[j+1][i] and mi_carton[j+1][i] != 0:
-                return False
+    i = 0
+    j = 9
+    for columna in range(9):
+        for fila in range(3):
+            if mi_carton[fila][columna] != 0:
+                if not(i <= mi_carton[fila][columna] <= j):
+                    return False
+        i += 10
+        j += 10
+        if j == 89:
+            j = 90
     return True
 
 
-
-
-# Genera un carton (valido o no)
 def nuevo_carton():
     contador = 0
 
@@ -181,21 +195,9 @@ def nuevo_carton():
                 huecos += 1
         if huecos == 3:
             return nuevo_carton()
+
     return carton
 
-def imprimirCarton(carton) :
-    for fila in carton:
-        for celda in fila:
-            print(celda, end='  ')
-        print()
-
-def main():
-    imprimirCarton(nuevo_carton())
-
-if __name__=="__main__":
-    main()
-    
-""" esto pa despues
 while True:
     carton = nuevo_carton()
     if(contar_celdas_ocupadas(carton) == 15
@@ -210,4 +212,3 @@ while True:
     and tres_columnas_con_una_celda(carton)
     and no_mas_de_3_celdas_vacias(carton)):
         break
-"""
