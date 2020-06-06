@@ -1,5 +1,5 @@
 from src import bingo
-mi_carton = bingo.carton()
+mi_carton = bingo.carton_valido()
 
 # testea que el carton tenga 15 celdas ocupadas o menos
 def test_menos_de_15():

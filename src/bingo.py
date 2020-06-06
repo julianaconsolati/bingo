@@ -1,7 +1,7 @@
 import random
 import math
 
-"""     ejemplo
+""" ejemplo
 def carton():
     cartonConCeldas = (
         (3,0,25,0,41,52,0,0,89),
@@ -91,21 +91,20 @@ def filas_vacias(mi_carton):
 
 # Retorna True si no hay numeros repetido, False en caso contrario
 def sin_numeros_repeditos(mi_carton):
-    for fila in mi_carton:
-        for celda in fila:
-            if celda != 0:
-                for fila2 in mi_carton:
-                    for celda2 in fila2:
-                        if celda == celda2:
-                            return False
+    aux = [0] * 91
+    for columna in range(0,3):
+        for fila in range(0,9):
+            if mi_carton[columna][fila] > 0 and mi_carton[columna][fila] <= 90:
+                if aux[mi_carton[columna][fila]] != 0:
+                    return False
+                aux[mi_carton[columna][fila]] = aux[mi_carton[columna][fila]] + 1
     return True
-
 
 # Retorna True si las celdas ocupadas se encuentran entre 1 y 90, False en caso contrario
 def celdas_1_a_90(mi_carton):
     for fila in mi_carton:
         for celda in fila:
-            if(celda >= 0 and celda <= 90):
+            if(celda > 0 and celda <= 90):
                 return True
     return False
 
@@ -198,17 +197,27 @@ def nuevo_carton():
 
     return carton
 
-while True:
-    carton = nuevo_carton()
-    if(contar_celdas_ocupadas(carton) == 15
-    and fila_solo_cinco(carton)
-    and columnas_vacias(carton)
-    and filas_vacias(carton)
-    and columnas_llenas(carton)
-    and celdas_1_a_90(carton)
-    and fila_menor_derecha(carton)
-    and fila_mayor_abajo(carton)
-    and sin_numeros_repeditos(carton)
-    and tres_columnas_con_una_celda(carton)
-    and no_mas_de_3_celdas_vacias(carton)):
-        break
+
+def carton_valido():
+    x = 0
+    while True:
+        print(x)
+        carton = nuevo_carton()
+        if(contar_celdas_ocupadas(carton) == 15
+        and fila_solo_cinco(carton)
+        and columnas_vacias(carton)
+        and filas_vacias(carton)
+        and columnas_llenas(carton)
+        and celdas_1_a_90(carton)
+        and fila_menor_derecha(carton)
+        and fila_mayor_abajo(carton)
+        and sin_numeros_repeditos(carton)
+        and tres_columnas_con_una_celda(carton)
+        and no_mas_de_3_celdas_vacias(carton)):
+            break
+        x += 1
+    return carton
+
+carton = carton_valido()
+for fila in carton:
+    print(fila)
