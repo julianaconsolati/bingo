@@ -1,5 +1,5 @@
+[![Build Status](https://travis-ci.com/julianaconsolati/bingo.svg?branch=master)](https://travis-ci.com/julianaconsolati/bingo)
 # Bingo
-
 Código en Python que genera un cartón de bingo.
 Escrito para Adaptación Del Ambiente De Trabajo, Instituto Politécnico Superior "Gral. San Martín", 2020.
 Juliana Consolati 6to Info
