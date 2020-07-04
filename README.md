@@ -19,24 +19,36 @@ Se considara un cartón válido al que cumple con las siguientes condiciones:
 * En una fila no existen más de dos celdas vacías consecutivas.
 * En una fila no existen más de dos celdas ocupadas consecutivas.
 
-## Uso
+## Uso e Instalación
 Para clonar el repositorio:
 ```
 git clone https://github.com/julianaconsolati/bingo.git
 ```
-Para ejecutar el código:
+Instalar los requerimientos:
 ```
-python src/bingo.py
+pip install -r requirements.txt
 ```
-Nota: para distribuciones basadas en Debian utilizar `python3`
+Para ejecutar el código, en versión consola:
+```
+python bingo_consola.py
+```
+Para ejecutar el código, en versión web:
+```
+python bingo_lindo.py
+```
+Generará otro archivo `bingo.html`, ejecutarlo preferentemente con un navegador
+
+Nota: para distribuciones basadas en Debian utilizar `python3` y `pip3`
 
 Para más información sobre cómo instalar o actualizar Python visite https://www.python.org/
 
 ## Ejemplo de salida
 ```
-$ python src/bingo.py 
-3  0   22  0   41  52  0   0   89
-7  12  0   38  0   57  0   73  0
-0  18  25  0   44  0   64  76  0
+$ python bingo_consola.py
+
+Tu carton de bingo es:
+4   0   25   35   0   0   61   73   0
+6   13   28   0   0   56   0   0   84
+0   16   0   0   49   58   66   0   90
 
 ```
