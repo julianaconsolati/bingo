@@ -216,7 +216,3 @@ def carton_valido():
             break
         x += 1
     return carton
-
-carton = carton_valido()
-for fila in carton:
-    print(fila)

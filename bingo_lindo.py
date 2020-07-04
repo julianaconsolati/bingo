@@ -3,7 +3,7 @@ from src.bingo import carton_valido
 
 template = Template(open("template.j2").read())
 
-file = open("bingo.html", "w")
+file = open("bingo.html", "w") #creo archivo de salida bingo.html
 file.write(template.render(carton = carton_valido()))
 file.close()
 print("Creado archivo bingo.html")
