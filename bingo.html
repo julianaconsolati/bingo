@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bingo Lindo</title>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<style>
+body{
+    font-family: 'Roboto', sans-serif;
+    /*trucazo para centrar divs*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+}
+
+.carton{
+    flex-direction: column; /*para que las tres filas del carton queden una abajo de la otra*/
+    display: flex;
+    border:3px solid #212121;
+    border-radius:7px;
+}
+
+.fila{
+    display: flex; /*para que queden las celdas una al lado de la otra en las filas*/
+}
+
+.fila div{
+    border: 3px solid #212121;
+    width: 3em;
+    height: 3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5em;
+    text-align: center;
+}
+
+.celda{
+    background: #f16026;
+    color: #212121;
+}
+
+.vacio {
+    background: #403D39;
+}
+</style>
+
+<body>
+    <div class="carton">
+        
+        <div class="fila">
+            
+              
+                <div class="vacio"></div>
+              
+            
+              
+                <div class="celda">
+                  11
+                </div>
+              
+            
+              
+                <div class="vacio"></div>
+              
+            
+              
+                <div class="celda">
+                  35
+                </div>
+              
+            
+              
+                <div class="celda">
+                  41
+                </div>
+              
+            
+              
+                <div class="celda">
+                  51
+                </div>
+              
+            
+              
+                <div class="vacio"></div>
+              
+            
+              
+                <div class="celda">
+                  76
+                </div>
+              
+            
+              
+                <div class="vacio"></div>
+              
+            
+        </div>
+        
+        <div class="fila">
+            
+              
+                <div class="celda">
+                  5
+                </div>
+              
+            
+              
+                <div class="vacio"></div>
+              
+            
+              
+                <div class="celda">
+                  24
+                </div>
+              
+            
+              
+                <div class="vacio"></div>
+              
+            
+              
+                <div class="celda">
+                  46
+                </div>
+              
+            
+              
+                <div class="vacio"></div>
+              
+            
+              
+                <div class="vacio"></div>
+              
+            
+              
+                <div class="celda">
+                  78
+                </div>
+              
+            
+              
+                <div class="celda">
+                  82
+                </div>
+              
+            
+        </div>
+        
+        <div class="fila">
+            
+              
+                <div class="vacio"></div>
+              
+            
+              
+                <div class="celda">
+                  19
+                </div>
+              
+            
+              
+                <div class="celda">
+                  29
+                </div>
+              
+            
+              
+                <div class="celda">
+                  37
+                </div>
+              
+            
+              
+                <div class="vacio"></div>
+              
+            
+              
+                <div class="celda">
+                  59
+                </div>
+              
+            
+              
+                <div class="celda">
+                  64
+                </div>
+              
+            
+              
+                <div class="vacio"></div>
+              
+            
+              
+                <div class="vacio"></div>
+              
+            
+        </div>
+        
+    </div>
+</body>
+</html>
