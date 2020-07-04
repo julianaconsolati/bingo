@@ -12,7 +12,7 @@ def carton():
 """
 
 # cuenta cuantas celdas ocupadas hay
-def contar_celdas_ocupadas(mi_carton):  
+def contar_celdas_ocupadas(mi_carton):
     contador = 0
     for fila in mi_carton:
         for celda in fila:
@@ -201,7 +201,6 @@ def nuevo_carton():
 def carton_valido():
     x = 0
     while True:
-        print(x)
         carton = nuevo_carton()
         if(contar_celdas_ocupadas(carton) == 15
         and fila_solo_cinco(carton)

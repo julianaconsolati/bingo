@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bingo Lindo</title>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<style>
+body{
+    font-family: 'Roboto', sans-serif;
+    /*trucazo para centrar divs*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+}
+
+.carton{
+    flex-direction: column; /*para que las tres filas del carton queden una abajo de la otra*/
+    display: flex;
+    border:3px solid #212121;
+    border-radius:7px;
+}
+
+.fila{
+    display: flex; /*para que queden las celdas una al lado de la otra en las filas*/
+}
+
+.fila div{
+    border: 3px solid #212121;
+    width: 3em;
+    height: 3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5em;
+    text-align: center;
+}
+
+.celda{
+    background: #f16026;
+    color: #212121;
+}
+
+.vacio {
+    background: #403D39;
+}
+</style>
+
+<body>
+    <div class="carton">
+        {% for fila in carton %}
+        <div class="fila">
+            {% for celda in fila %}
+              {% if celda != 0 %}
+                <div class="celda">
+                  {{ celda }}
+                </div>
+              {% else %}
+                <div class="vacio"></div>
+              {% endif %}
+            {% endfor %}
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
