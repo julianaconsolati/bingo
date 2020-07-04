@@ -43,6 +43,8 @@ Nota: para distribuciones basadas en Debian utilizar `python3` y `pip3`
 Para más información sobre cómo instalar o actualizar Python visite https://www.python.org/
 
 ## Ejemplo de salida
+
+### Terminal
 ```
 $ python bingo_consola.py
 
@@ -52,3 +54,6 @@ Tu carton de bingo es:
 0   16   0   0   49   58   66   0   90
 
 ```
+### Web
+
+![alt text](https://github.com/julianaconsolati/bingo/blob/master/Imágenes/bingo.png?raw=true)
