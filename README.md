@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.com/julianaconsolati/bingo.svg?branch=master)](https://travis-ci.com/julianaconsolati/bingo)
 [![Coverage Status](https://coveralls.io/repos/github/julianaconsolati/bingo/badge.svg?branch=master)](https://coveralls.io/github/julianaconsolati/bingo?branch=master)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/julianaconsolati/bingo/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/julianaconsolati/bingo/?branch=master)
 # Bingo
 Código en Python que genera un cartón de bingo.
 Escrito para Adaptación Del Ambiente De Trabajo, Instituto Politécnico Superior "Gral. San Martín", 2020.
